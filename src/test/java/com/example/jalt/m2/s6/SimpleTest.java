@@ -107,7 +107,15 @@ class SimpleTest {
         double second = 3.0;
         double actual = simple.multiply(first, second);
         double expected = .87;
+
+        // due to representation problems exact comparison would fail
+//      assertEquals(expected, actual);
+
+        // when only a very tiny difference is accepted
         assertEquals(expected, actual, .000_000_000_000_000_2);
+
+        // when a wide difference is accepted
+//        assertEquals(expected, actual, .1);
     }
 
     /**
